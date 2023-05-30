@@ -25,6 +25,15 @@ model = "mask_pred_weights.pth"
 input_image = "images/content-images/" + img
 #output_image = "images/output-images/" + style_name + "-" + img
 
+uploaded_file = st.file_uploader("Upload a file")
+
+if uploaded_file is not None:
+    # Process the uploaded file
+    file_contents = uploaded_file.read()
+    st.write("Uploaded file contents:")
+    st.write(file_contents)
+
+
 st.write('### Source image:')
 image = Image.open(input_image)
 st.image(image, width=400) # image: numpy array
