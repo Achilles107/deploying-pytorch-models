@@ -21,7 +21,7 @@ style_name = st.sidebar.selectbox(
 )
 
 
-model= "saved_models/" + style_name + ".pth"
+model= "" + style_name + ".pth"
 input_image = "images/content-images/" + img
 output_image = "images/output-images/" + style_name + "-" + img
 
