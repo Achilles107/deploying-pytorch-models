@@ -12,7 +12,7 @@ st.title('PyTorch Style Transfer')
 
 img = st.sidebar.selectbox(
     'Select Image',
-    ('girl_mask.png', 'selena.png', 'brad.jpg', 'face_man.jpg', 'face.jpg', 'blue_mask.jpg', 'images.jpg', 'mask_with_face_on.jpg', 'Surgical-Mask.jpg')
+    ('girl_mask.png', 'selena.png', 'brad.jpg', 'face_man.jpg', 'face.jpg', 'blue_mask.png', 'images.jpg', 'mask_with_face_on.jpg', 'Surgical-Mask.jpg')
 )
 
 # style_name = st.sidebar.selectbox(
