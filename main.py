@@ -34,6 +34,10 @@ clicked = st.button('Stylize')
 if clicked:
     model = style.load_model(model)
     output = style.stylize(model, input_image)
+    if output == 'Mask':
+        st.write('### Mask On')
+    else:
+        st.write('### Mask off')
     print(output)
     
 
