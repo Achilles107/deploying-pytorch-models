@@ -24,13 +24,13 @@ def load_model(model_path):
     print('load model')
     with torch.no_grad():
         style_model = MaskNoMaskClassifier()
-        state_dict = torch.load(model_path)
+        state_dict = torch.load(model_path, map_location=device)
         # remove saved deprecated running_* keys in InstanceNorm from the checkpoint
         for k in list(state_dict.keys()):
             if re.search(r'in\d+\.running_(mean|var)$', k):
                 del state_dict[k]
         style_model.load_state_dict(state_dict)
-        style_model.to(device)
+        #style_model.to(device)
         style_model.eval()
         return style_model
 
