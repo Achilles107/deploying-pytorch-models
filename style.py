@@ -44,4 +44,6 @@ def stylize(style_model, content_image):
     content_image = transformation(content_image)
     output = content_image.unsqueeze(0).to(device)
     
+    with torch.no_grad():
+        output = style_model(output).cpu()
     return output
