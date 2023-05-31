@@ -40,7 +40,7 @@ def load_model(model_path):
 
 @st.cache
 def stylize(style_model, content_image):
-    #content_image = utils.load_image(content_image)
+    content_image = utils.load_image(content_image)
     transformation = transforms.Compose([transforms.Lambda(lambda x: x.convert('RGB') if x.mode != 'RGB' else x),
                                       transforms.Resize((150, 150)),  # resize to input shape of our CNN
                                       transforms.ToTensor()  # convert PIL to Tensor
