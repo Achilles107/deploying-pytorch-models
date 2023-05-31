@@ -19,11 +19,11 @@ class MaskNoMaskClassifier(nn.Module):
     )
 
     self.classifier = nn.Sequential(
-        nn.Linear(in_features=36992, out_features=512),
+        nn.Linear(in_features=36992, out_features=1024),
         nn.ReLU(),
-        # nn.Linear(in_features=1024, out_features=512),
-        # nn.ReLU(),
-        nn.Linear(in_features=512, out_features=1)
+        nn.Linear(in_features=1024, out_features=256),
+        nn.ReLU(),
+        nn.Linear(in_features=256, out_features=1)
     )
 
   def forward(self, features):
