@@ -31,7 +31,7 @@ if uploaded_file is not None:
     # Process the uploaded file
     file_contents = uploaded_file.read()
     st.write("Uploaded file contents:")
-    st.write(file_contents)
+    st.image(file_contents, width=400)
 
 
 st.write('### Source image:')
