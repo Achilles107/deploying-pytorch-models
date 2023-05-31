@@ -7,6 +7,7 @@ import streamlit as st
 from PIL import Image
 
 import style
+import io
 
 st.title('PyTorch Style Transfer')
 
@@ -31,7 +32,9 @@ if uploaded_file is not None:
     # Process the uploaded file
     file_contents = uploaded_file.read()
     st.write("Uploaded file contents:")
-    st.image(file_contents, width=400)
+    image = Image.open(io.BytesIO(file_contents))
+    st.image(image, width=400)
+    #st.image(file_contents, width=400)
 
 
 st.write('### Source image:')
