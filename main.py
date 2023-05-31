@@ -35,14 +35,14 @@ if uploaded_file is not None:
 
 
 st.write('### Source image:')
-image = Image.open(file_contents)
+image = Image.open(input_image)
 st.image(image, width=400) # image: numpy array
 
 clicked = st.button('Stylize')
 
 if clicked:
     model = style.load_model(model)
-    output = style.stylize(model, input_image)
+    output = style.stylize(model, file_contents)
     if output == 'Mask':
         st.write('### Mask On')
     else:
