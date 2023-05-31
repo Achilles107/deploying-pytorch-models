@@ -36,7 +36,7 @@ if uploaded_file is not None:
 
 
 st.write('### Source image:')
-image = Image.open(input_image)
+image = Image.open(uploaded_file.name)
 st.image(image, width=400) # image: numpy array
 
 clicked = st.button('Stylize')
