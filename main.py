@@ -45,7 +45,7 @@ clicked = st.button('Detect')
 
 if clicked:
     model = style.load_model(model)
-    output = style.stylize(model, file_contents)
+    output = style.stylize(model, image)
     if output == 'Mask':
         st.write('### Mask On')
     else:
